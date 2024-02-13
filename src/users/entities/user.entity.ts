@@ -1,5 +1,7 @@
 import { CategoryEntity } from "src/categories/entities/category.entity";
+import { OrderEntity } from "src/orders/entities/order.entity";
 import { ProductEntity } from "src/product/entities/product.entity";
+import { ReviewEntity } from "src/reviews/entities/review.entity";
 import { Roles } from "src/utility/common/user-roles.enum";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 
@@ -11,10 +13,10 @@ export class UserEntity {
   @Column()
   name: string;
 
-  @Column({unique: true})
+  @Column({ unique: true })
   email: string;
 
-  @Column({select: false})
+  @Column({ select: false })
   password: string;
 
   @Column({
@@ -46,4 +48,13 @@ export class UserEntity {
 
   @OneToMany(() => ProductEntity, (prod) => prod.user_)
   products: ProductEntity[];
+
+  @OneToMany((type) => ReviewEntity, (rev) => rev.user_)
+  reviews: ReviewEntity[];
+
+  @OneToMany(() => OrderEntity, (order) => order.updatedBy_)
+  ordersUpdateBy: OrderEntity[];
+
+  @OneToMany(() => OrderEntity, (order) => order.user_)
+  orders: OrderEntity[]
 }
