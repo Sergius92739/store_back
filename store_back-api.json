@@ -1,0 +1,600 @@
+{
+  "info": {
+    "_postman_id": "5d0b0e2a-cf1d-4cd9-9db8-842a7c40385e",
+    "name": "Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24258004"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "/users/signup",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Петя\",\n    \"email\": \"petia@petia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/users/signup",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "signup"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "admin signin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"admin@admin.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/users/signin",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "signin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Вася signin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"vasia@vasia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/users/signin",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "signin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Петя signin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"petia@petia.com\",\n    \"password\": \"123456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/users/signin",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "signin"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/all",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc1MTMwMTUsImV4cCI6MTcwNzUxNDgxNX0.bgqXu80aKdMuXwZQsxU94I65n5njHABbhBg43pFgxgc",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/users/all",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/single/1",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/users/single/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "single", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/users/me",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc2MTAxMDAsImV4cCI6MTcwNzYxMTkwMH0.vg18jjH2DLBQmmc-_iLaMhC93uiAjWYKpZP45rWES5I",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/users/me",
+              "host": ["{{BASE_URL}}"],
+              "path": ["users", "me"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "/categories/create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc2MTA0MjQsImV4cCI6MTcwNzYxMjIyNH0.n3M44M2_eeJnwq-cOy1-bolKGJ9nwe8FcOjikSVtKTk",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Нижнее бельё\",\n    \"description\": \"Описание категории Нижнее бельё\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/categories/create",
+              "host": ["{{BASE_URL}}"],
+              "path": ["categories", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/categories/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/categories/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["categories", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/categories/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDcyNjc5NjYsImV4cCI6MTcwNzI2OTc2Nn0.hBh-ZWwdMilRAEJbOWq5Z9NEUMmdovM7TMV_ZFfNxI8",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"updated Category 1\",\n    \"description\": \"updated category description 1\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/categories/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["categories", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "item": [
+        {
+          "name": "/products/create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc3NzQwMzEsImV4cCI6MTcwNzc3NTgzMX0.fj2Q80yQiFc3aprydmjD4lMoqaooaJGxv8DVwyQUA20",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"to delite\",\n    \"description\": \"Описание to delite\",\n    \"price\": 100000.50,\n    \"stock\": 32,\n    \"images\": [\"path1\", \"path2\", \"path3\"],\n    \"category_id\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/products/create",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/products/all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products/search/",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "search", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "Майка",
+                  "disabled": true
+                },
+                {
+                  "key": "category",
+                  "value": "4",
+                  "disabled": true
+                },
+                {
+                  "key": "minPrice",
+                  "value": "500",
+                  "disabled": true
+                },
+                {
+                  "key": "maxPrice",
+                  "value": "600",
+                  "disabled": true
+                },
+                {
+                  "key": "minRating",
+                  "value": "3",
+                  "disabled": true
+                },
+                {
+                  "key": "maxRating",
+                  "value": "4",
+                  "disabled": true
+                },
+                {
+                  "key": "limit",
+                  "value": "2",
+                  "disabled": true
+                },
+                {
+                  "key": "offset",
+                  "value": "3",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/products/remove/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products/remove/12",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "remove", "12"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/products/single/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/products/single/14",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "single", "14"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/products/update/:id",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc3ODA1NzIsImV4cCI6MTcwNzc4MjM3Mn0.XlAvHqjiOoDywkesRvAvY2pEegTG5mFwWY23WvXydtA",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"price\": 700.00,\n    \"stock\": 5\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/products/update/14",
+              "host": ["{{BASE_URL}}"],
+              "path": ["products", "update", "14"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "reviews",
+      "item": [
+        {
+          "name": "/reviews/create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJwZXRpYUBwZXRpYS5jb20iLCJpYXQiOjE3MDc2OTQyMTksImV4cCI6MTcwNzY5NjAxOX0.FVSoh6WQ16CrEmI3ODWpW0zYHwV2GRi4-LVopiPJ7M0",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"product_id\": 11,\n    \"ratings\": 1,\n    \"comment\": \"Товар плохого качества\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/create",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/reviews/single/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/single/1",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "single", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/reviews/by-product",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"productId\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/by-product",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "by-product"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/reviews/all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/all",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/reviews/remove/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDczOTE1ODksImV4cCI6MTcwNzM5MzM4OX0.5SKCrRe5dQHieXOjSlSls5easfjvPa8HaN5m-KZWDTo",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/reviews/remove/3",
+              "host": ["{{BASE_URL}}"],
+              "path": ["reviews", "remove", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "item": [
+        {
+          "name": "/ordets/create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc2NjgyNzYsImV4cCI6MTcwNzY3MDA3Nn0.Jzpj3fr9sjC8vMAfpCa0HgT31WYlVvvphrkvwi4XlwE",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"shippingAddress\": {\n       \"phone\": \"89261112233\",\n       \"name\": \"admin\",\n       \"address\": \"ул. Говорова, дом 7, кв. 85\",\n       \"city\": \"Фрязино\",\n       \"comment\": \"Домофон 5632\",\n       \"postCode\": \"366005\"\n    },\n    \"orderedProducts\": [\n        {\n            \"id\": 6,\n            \"product_unit_price\": 9400.50,\n            \"product_quantity\": 1\n        },\n        {\n            \"id\": 12,\n            \"product_unit_price\": 430.50,\n            \"product_quantity\": 1\n        }\n    ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/orders/create",
+              "host": ["{{BASE_URL}}"],
+              "path": ["orders", "create"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/orders/all",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/orders/all",
+              "host": ["{{BASE_URL}}"],
+              "path": ["orders", "all"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/orders/status-update/:id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc2NzgyMDgsImV4cCI6MTcwNzY4MDAwOH0.eGqv0rwzWq0XMM54FrTSeE_66ttuzzRCgP34HclIKTQ",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"доставлен\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/orders/status-update/3",
+              "host": ["{{BASE_URL}}"],
+              "path": ["orders", "status-update", "3"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "/orders/cancel/:id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MDc2ODAwMDYsImV4cCI6MTcwNzY4MTgwNn0.oDGQTZF4UEqnP2Nh-4tJzGPjLco8CdXFIrwavSxChWg",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/orders/cancel/3",
+              "host": ["{{BASE_URL}}"],
+              "path": ["orders", "cancel", "3"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:4200/api/v1"
+    }
+  ]
+}
